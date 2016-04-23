@@ -24,6 +24,20 @@ module.exports = function(req, res, next) {
 
         global.dbConnection = conn;
 
+
+        var Schema = mongoose.Schema;
+
+        var postSchema = new Schema({
+            title: String,
+            content: String
+        });
+
+        postSchema.plugin(timestamps);
+
+        global.Post = conn.model('Post', postSchema);
+
+
+
         return next();
     });
 
@@ -31,5 +45,12 @@ module.exports = function(req, res, next) {
         return next(err);
     });
 
-    mongoose.connect('mongodb://zero:zero1234@ds047335.mongolab.com:47335/zero-to-blog');
+
+
+
+
+
+
+
+    mongoose.connect('mongodb://play_blog:5566@ds029793.mlab.com:29793/play_blog');
 };

@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var db = require('./configs/db');
 var flash = require('connect-flash');
 var passportConfig = require('./passport');
-
 var routes = require('./routes');
+
 
 var app = express();
 
@@ -26,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
 
 passportConfig(app);
+
+
 
 app.use('/', flash(), db, routes);
 

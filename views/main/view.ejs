@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css'/>
+</head>
+<body>
+<a href="/">返回首頁</a>
+
+<div style="border: 1px solid #333; margin: 8px; padding: 8px;">
+    <div>
+        <div>標題：<%= post.title %></div>
+        <div>內容：<%= post.content %></div>
+        <div>建立時間： <%= post.createdAt %></div>
+        <div>更新時間： <%= post.updatedAt %></div>
+    </div>
+</div>
+
+<a href="/edit/<%= post._id %>">編輯</a>
+
+</body>
+</html>

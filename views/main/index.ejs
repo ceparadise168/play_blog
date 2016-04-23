@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/css/style.css'/>
+</head>
+<body>
+<a href="/add">新增文章</a>
+<%
+for (var index in posts) {
+    var post = posts[index];
+%>
+<div style="border: 1px solid #333; margin: 8px; padding: 8px;">
+    <a href="./view?id=<%= post._id %>"><%= post.title %></a>
+    <div style="float: right;"><%= post.createdAt %></div>
+</div>
+<% } %>
+</body>
+</html>
